@@ -33,19 +33,19 @@ body{
 }
 
 #inputBox{
-
+    background-color: lightblue;
 }
 
 #calcBox{
-
+    background-color: lightgreen;;
 }
 
 #keypad{
     
 }
 
-#history{
-    
+#historyBox{
+    background-color: gray;
 }
 
 .numKey{
