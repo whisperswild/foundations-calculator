@@ -99,7 +99,7 @@ function display(input){
             historyBox.innerHTML += inputBox.innerHTML;
             inputBox.innerHTML = "";
         }else{
-            let result = operate(parseInt(calcBox.innerHTML), parseInt(inputBox.innerHTML), selectedOperator);
+            let result = operate(parseFloat(calcBox.innerHTML), parseFloat(inputBox.innerHTML), selectedOperator);
             if (input === "="){
                 historyBox.innerHTML = result;
             }else{
@@ -110,6 +110,11 @@ function display(input){
             inputBox.innerHTML = "";
 
         }
+    }else if(input === "Clear"){
+        clear();
+    }else if(input === "Delete"){
+        inputBox.innerHTML = inputBox.innerHTML.slice(0, -1);
+        
     }else{
         inputBox.innerHTML += input;
     }

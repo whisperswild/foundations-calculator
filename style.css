@@ -1,57 +1,128 @@
-/* Style ideas...
-    -star trek gui?
-    -outrun
+html,body {
+    height: 100%;
+    background: url("imgs/bg.jpg") no-repeat center;
+    background-size: cover;
+    /*font-family: 'Saira Condensed';*/
+    font-family: 'Russo One';
+    margin: 0;
+    border: 0;
+    padding: 0;
 
-*/
-
-body{
-
-}
-
-#container{
-
-}
-
-.head{
 
 }
 
-.content{
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    color: #D40078;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#head {
+    font-size: 3em;
+    padding: 20px;
+
+   
+}
+
+#content {
+    background-color: #261447;
+}
+
+#calculator {
+    width: 500px;
+    border: solid #791E94;
+    border-width: 4px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px #791E94;
+    padding: 10px;
+}
+
+#footer {
+    color: #D40078;
+    padding: 20px;
+}
+
+#inputBox {
+   color: #f9c80E;
+   border: solid #f9c80E;
+   border-width: 1px;
+   box-shadow: 0 0 10px #f9c80E;
+   padding: 5px; 
+}
+
+#calcBox {
+    color: #f9c80E;
+    border: solid #f9c80E;
+    border-width: 1px;
+    box-shadow: 0 0 5px #f9c80E;
+    padding: 5px;  
+}
+
+#keypad {
+    font-size: 3rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: space-evenly;
+
+    
+}
+#control-keys{
 
 }
 
-.footer{
+#operators{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: space-evenly;
+}
 
+#numbers{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: space-evenly;
+}
+
+#historyBox {
+    color: #f9c80E;
+    border: solid #f9c80E;
+    border-width: 1px;
+    box-shadow: 0 0 10px #f9c80E;
+    padding: 5px; 
+}
+
+
+
+.numKey{
+    color: #FF4365;
+    border: solid #FF4365;
+    border-width: 1px;
+    box-shadow: 0 0 10px #FF4365;
+    padding: 5px; 
 }
 
 .resetKey{
-
+    color: #2de2e6;
+    border: solid #FF4365;
+    border-width: 1px;
+    box-shadow: 0 0 10px #FF4365;
+    padding: 5px; 
 }
 
 .operatorKey{
-
+    color: #FF4365;
+    border: solid #FF4365;
+    border-width: 1px;
+    box-shadow: 0 0 10px #FF4365;
+    padding: 5px; 
 }
-
-#inputBox{
-    background-color: lightblue;
-}
-
-#calcBox{
-    background-color: lightgreen;;
-}
-
-#keypad{
-    
-}
-
-#historyBox{
-    background-color: gray;
-}
-
-.numKey{
-    
-}
-
 .clicked {
-    color: red;
+    background-color: #f9c80E;
 }
