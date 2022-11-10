@@ -4,12 +4,21 @@ const keyPad = document.querySelector('#keypad');
 const divs = document.querySelectorAll('div');
 
 keyPad.addEventListener('mousedown', (e) => {
-    btnClicked(e.target, 'clicked');
-    display(e.target.getAttribute('data-value'));
+    if (e.target.getAttribute('data-value') != null){
+        btnClicked(e.target, 'clicked');
+        display(e.target.getAttribute('data-value'));
+    }else{
+        return;
+    }
+
 });
 
 keyPad.addEventListener('mouseup', (e) => {
-    btnClicked(e.target, 'unclicked');
+    if (e.target.getAttribute('data-value') != null){
+        btnClicked(e.target, 'unclicked');
+    }else{
+        return;
+    }
 });
 
 
@@ -90,6 +99,7 @@ const inputBox = document.querySelector('#inputBox');
 const historyBox = document.querySelector('#historyBox');
 
 function display(input){
+
     if (OPERATORS.includes(input)){
         if(inputBox.innerHTML.length === 0){
             console.log("Nothing to calculate against!");
@@ -114,7 +124,8 @@ function display(input){
         clear();
     }else if(input === "Delete"){
         inputBox.innerHTML = inputBox.innerHTML.slice(0, -1);
-        
+    }else if(input === "neg"){
+        //add logic to make the number negative by multiplying by -1
     }else{
         inputBox.innerHTML += input;
     }
