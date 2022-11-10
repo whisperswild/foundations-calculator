@@ -34,7 +34,7 @@ html,body {
 }
 
 #calculator {
-    width: 500px;
+    width: 250px;
     border: solid #791E94;
     border-width: 4px;
     border-radius: 6px;
@@ -48,11 +48,13 @@ html,body {
 }
 
 #inputBox {
-   color: #f9c80E;
-   border: solid #f9c80E;
-   border-width: 1px;
-   box-shadow: 0 0 10px #f9c80E;
-   padding: 5px; 
+    color: #f9c80E;
+    border: solid #f9c80E;
+    border-width: 1px;
+    box-shadow: 0 0 10px #f9c80E;
+    min-height: 3.5rem;
+    font-size: 3rem;
+    text-shadow: 0 0 10px #2de2e6
 }
 
 #calcBox {
@@ -60,35 +62,36 @@ html,body {
     border: solid #f9c80E;
     border-width: 1px;
     box-shadow: 0 0 5px #f9c80E;
-    padding: 5px;  
 }
 
 #keypad {
-    font-size: 3rem;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    justify-content: space-evenly;
-
-    
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-#control-keys{
 
+#control-keys{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
 }
 
 #operators{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    justify-content: space-evenly;
+    align-self: flex-end;
 }
 
 #numbers{
+    min-height: 4em;
+    min-width: 4em;
+    flex-grow: 4;
+    align-self: stretch;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    justify-content: space-evenly;
+    grid-template-areas: "A A A A";
+    justify-content: center;
 }
 
 #historyBox {
@@ -107,6 +110,9 @@ html,body {
     border-width: 1px;
     box-shadow: 0 0 10px #FF4365;
     padding: 5px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .resetKey{
