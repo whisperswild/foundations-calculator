@@ -92,7 +92,7 @@ function clear(){
 
 function display(input){
     if (resetLoop == true){
-        clear();
+        inputBox.innerHTML = "";
         resetLoop = false;
     }
 
@@ -100,8 +100,10 @@ function display(input){
         if(inputBox.innerHTML.length === 0){
             if(historyBox.innerHTML.length === 0){
                 console.log("Nothing to calculate against!");
+                console.log(historyBox.innerHTML.length);
             }else{
                 historyBox.innerHTML = `${result} ${input}`;
+                console.log(`input: ${input}`);
                 selectedOperator = input;
             }
         }else if(calcBox === 0){
