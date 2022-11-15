@@ -1,8 +1,15 @@
-//since we can get the target of the mouse click, we only need
-//an eventlistener on the whole keypad instead of individual divs
+const OPERATORS = ["+", "-", "*", "/", "=", "(", ")"];
 const calculator = document.querySelector('#calculator');
 const divs = document.querySelectorAll('div');
+const inputBox = document.querySelector('#inputBox');
+const historyBox = document.querySelector('#historyBox');
+let calcBox = 0;
+let resetLoop = false;
+let result = 0;
+let selectedOperator = '';
 
+//since we can get the target of the mouse click, we only need
+//an eventlistener on the whole keypad instead of individual divs
 calculator.addEventListener('mousedown', (e) => {
     if (e.target.getAttribute('data-value') != null){
         btnClicked(e.target, 'clicked');
@@ -20,7 +27,6 @@ calculator.addEventListener('mouseup', (e) => {
         return;
     }
 });
-
 
 const keypadPressDown = document.addEventListener('keydown', e=>{
     const keyPressed = e.key;
@@ -60,7 +66,6 @@ function divide(a, b){
     }else{
         return "Divide by 0 error!";
     }
-    
 }
 
 function operate(a, b, operator){
@@ -76,37 +81,20 @@ function operate(a, b, operator){
     }
 }
 
-const OPERATORS = ["+", "-", "*", "/", "=", "(", ")"];
-let selectedOperator = '';
-
 function clear(){
     historyBox.innerHTML = "";
-    calcBox = 0;
     inputBox.innerHTML = "";
     historyBox.innerHTML = "";
     selectedOperator = "";
     input = 0;
+    calcBox = 0;
 }
-
-// first on each button press load the number into div
-// second, if operator button pressed, load div into a new variable from the div
-// second, clear the div (create copy in 'history' field?) 
-// repeat 
-
-/*<div id="inputBox"></div>
-<div id="historyBox"></div> */
-let calcBox = 0;
-const inputBox = document.querySelector('#inputBox');
-const historyBox = document.querySelector('#historyBox');
-let resetLoop = false;
-let result = 0;
 
 function display(input){
     if (resetLoop == true){
         clear();
         resetLoop = false;
     }
-    console.log(input);
 
     if (OPERATORS.includes(input)){
         if(inputBox.innerHTML.length === 0){
@@ -116,7 +104,6 @@ function display(input){
                 historyBox.innerHTML = `${result} ${input}`;
                 selectedOperator = input;
             }
-           
         }else if(calcBox === 0){
                 selectedOperator = input;
                 calcBox = inputBox.innerHTML;
@@ -140,9 +127,6 @@ function display(input){
             
             calcBox = result;
             inputBox.innerHTML = "";
-
-            //do some funny stuff depending on the inputs..?
-
         }
     }else if(input === "Clear"){
         clear();
@@ -153,12 +137,6 @@ function display(input){
     }else{
         inputBox.innerHTML += input;
     }
-    
-   
-}
-
-function history(log){
-
 }
 
 function btnClicked(btn, status){
@@ -168,5 +146,3 @@ function btnClicked(btn, status){
         btn.classList.remove('clicked');
     }
 }
-
-
