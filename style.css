@@ -20,18 +20,23 @@ html,body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    perspective: 500px;
 }
 
 #head {
     font-size: 3ch;
     padding: 5rem;
+    color: #f9c80E;
+    text-shadow: 1px 1px 0px #FF4365;
 
-   color: white;
 }
 
 #content {
     background-color: #261447;
     border: solid #791E94;
+    box-shadow: 0 0 20px #f9c80E;
+    transform: rotateX(50deg);
 }
 
 #calculator {
@@ -89,6 +94,12 @@ html,body {
     box-shadow: 0 0 10px #f9c80E; */
     padding: 1rem; 
     overflow-wrap: break-word;
+}
+
+#display{
+    border: solid #FF4365;
+    border-width: 1px; 
+    box-shadow: 1 1 -10px #FF4365;
 }
 
 #keypad {

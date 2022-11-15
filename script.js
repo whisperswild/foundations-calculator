@@ -98,10 +98,14 @@ function clear(){
 let calcBox = 0;
 const inputBox = document.querySelector('#inputBox');
 const historyBox = document.querySelector('#historyBox');
+let resetLoop = false;
 let result = 0;
 
 function display(input){
-
+    if (resetLoop == true){
+        clear();
+        resetLoop = false;
+    }
     console.log(input);
 
     if (OPERATORS.includes(input)){
@@ -128,6 +132,7 @@ function display(input){
                 historyBox.innerHTML = result;
                 calcBox = 0;
                 selectedOperator = "";
+                resetLoop = true;
             }else{
                 historyBox.innerHTML += inputBox.innerHTML + input;
                 selectedOperator = input;
